@@ -7,7 +7,7 @@ import skel.misc.util.Validate;
  */
 public class SpectrumAnalyzer {
 
-    private static final double THRESHOLD = 0.03;
+    private static final double THRESHOLD = 0.3;
 
     private final Fft fft;
     private final double step;
@@ -59,7 +59,7 @@ public class SpectrumAnalyzer {
 
 
         double frequency = -1.0;
-        double amplitude = 1 - THRESHOLD;
+        double amplitude = THRESHOLD;
 
         for (int i = (int) (minFrequency / step); i < (int) (maxFrequency / step); i++) {
             double curAmplitude = amplitudes[i] / maxAmplitude;
