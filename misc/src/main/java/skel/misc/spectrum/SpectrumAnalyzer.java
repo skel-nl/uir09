@@ -7,12 +7,10 @@ import skel.misc.util.Validate;
  */
 public class SpectrumAnalyzer {
 
-    private static final double THRESHOLD = 0.3;
-
     private final Fft fft;
     private final double step;
-    private final double minFrequency;
-    private final double maxFrequency;
+    private final int minIndex;
+    private final int maxIndex;
 
     public SpectrumAnalyzer(int sampleRate, int sampleLog, double minFrequency,
             double maxFrequency)
@@ -28,8 +26,8 @@ public class SpectrumAnalyzer {
         fft = new Fft(sampleLog);
         step = 1.0 * sampleRate / (1 << sampleLog);
 
-        this.minFrequency = minFrequency;
-        this.maxFrequency = maxFrequency;
+        minIndex = (int) (minFrequency / step);
+        maxIndex = (int) (maxFrequency / step) + 1;
     }
 
     public double getFrequency(double[] sample) {
@@ -44,33 +42,19 @@ public class SpectrumAnalyzer {
 
         fft.doFFT(xr, xi, false);
 
-        
-        double[] amplitudes = new double[n];
-        double maxAmplitude = 0.0;
-        
-        for (int i = 0; i < n; i++) {
+        int index = -1;
+        double amplitude = 0;
+
+        for (int i = minIndex; i < maxIndex; i++) {
             double curAmplitude = Math.hypot(xr[i], xi[i]);
-            amplitudes[i] = curAmplitude;
-
-            if (curAmplitude > maxAmplitude) {
-                maxAmplitude = curAmplitude;
-            }
-        }
-
-
-        double frequency = -1.0;
-        double amplitude = THRESHOLD;
-
-        for (int i = (int) (minFrequency / step); i < (int) (maxFrequency / step); i++) {
-            double curAmplitude = amplitudes[i] / maxAmplitude;
 
             if (curAmplitude > amplitude) {
                 amplitude = curAmplitude;
-                frequency = i * step;
+                index = i;
             }
         }
 
-        return frequency;
+        return index * step;
     }
 
     public double getStep() {
