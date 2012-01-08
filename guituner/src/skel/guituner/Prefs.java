@@ -7,7 +7,6 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
 import skel.misc.note.Tuning;
-import skel.misc.util.Validate;
 
 public class Prefs extends PreferenceActivity {
 
@@ -35,10 +34,7 @@ public class Prefs extends PreferenceActivity {
     public static Tuning getTuning(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-        String tuningName = prefs.getString(OPT_TUNING, OPT_TUNING_DEF);
-
-        Tuning tuning = Tuning.tuning(tuningName);
-        Validate.notNull(tuning);
+        Tuning tuning = Tuning.tuning(prefs.getString(OPT_TUNING, OPT_TUNING_DEF));
 
         boolean shiftingNeeded = prefs.getBoolean(OPT_TUNING_SHIFT_CHECKBOX,
                 OPT_TUNING_SHIFT_CHECKBOX_DEF);
