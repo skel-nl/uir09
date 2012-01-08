@@ -19,9 +19,6 @@ import skel.misc.note.Note;
 import skel.misc.note.Tuning;
 import skel.misc.spectrum.SpectrumAnalyzer;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Tuner extends Activity {
 
     private static final Logger logger = Logger.getLogger(Tuner.class);
@@ -33,7 +30,7 @@ public class Tuner extends Activity {
     private final View.OnClickListener onClickListener = new TunerOnClickListener();
     private final Handler handler = new TunerHandler();
 
-    private final List<Button> stringButtons = new ArrayList<Button>(6);
+    private final Button[] stringButtons = new Button[6];
 
     private TextView curNoteTextView;
     private TextView curFreqTextView;
@@ -58,12 +55,13 @@ public class Tuner extends Activity {
         findViewById(R.id.note_down_id).setOnClickListener(onClickListener);
         findViewById(R.id.note_up_id).setOnClickListener(onClickListener);
 
-        stringButtons.add((Button) findViewById(R.id.string_1));
-        stringButtons.add((Button) findViewById(R.id.string_2));
-        stringButtons.add((Button) findViewById(R.id.string_3));
-        stringButtons.add((Button) findViewById(R.id.string_4));
-        stringButtons.add((Button) findViewById(R.id.string_5));
-        stringButtons.add((Button) findViewById(R.id.string_6));
+        // text on these buttons will be updated
+        stringButtons[0] = (Button) findViewById(R.id.string_1);
+        stringButtons[1] = (Button) findViewById(R.id.string_2);
+        stringButtons[2] = (Button) findViewById(R.id.string_3);
+        stringButtons[3] = (Button) findViewById(R.id.string_4);
+        stringButtons[4] = (Button) findViewById(R.id.string_5);
+        stringButtons[5] = (Button) findViewById(R.id.string_6);
 
         for (Button stringButton : stringButtons) {
             stringButton.setOnClickListener(onClickListener);
@@ -84,8 +82,8 @@ public class Tuner extends Activity {
         sampleLog = Prefs.getSampleLog(this);
 
         // update buttons
-        for (int i = 0; i < stringButtons.size(); i++) {
-            stringButtons.get(i).setText(tuning.getNote(i).toString());
+        for (int i = 0; i < stringButtons.length; i++) {
+            stringButtons[i].setText(tuning.getNote(i).toString());
         }
 
         // load the last used note
