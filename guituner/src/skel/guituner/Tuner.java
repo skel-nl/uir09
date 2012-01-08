@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import skel.android.audio.AudioReader;
+import skel.android.util.Logger;
 import skel.misc.note.Note;
 import skel.misc.note.Tuning;
 import skel.misc.spectrum.SpectrumAnalyzer;
@@ -22,6 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tuner extends Activity {
+
+    private static final Logger logger = Logger.getLogger(Tuner.class);
 
     private static final String NOTE_N_KEY = "note_n";
     private static final String NOTE_OCTAVE_KEY = "note_octave";
@@ -219,7 +222,11 @@ public class Tuner extends Activity {
         @Override
         public void handleMessage(Message msg) {
             double[] buffer = cast(msg.obj);
+            logger.v("Data was received");
+
             double frequency = spectrumAnalyzer.getFrequency(buffer);
+            logger.d("Frequency: " + frequency);
+
             if (frequency > 0) {
                 updateFrequency(frequency);
 
