@@ -1,0 +1,69 @@
+<resources>
+    <string-array name="prefs_tuning_entries">
+        <item>Standard tuning (E)</item>
+        <item>Dropped tuning (Drop D)</item>
+        <item>Open tuning (Open D)</item>
+        <item>Open Tuning (Open G)</item>
+    </string-array>
+
+    <string-array name="prefs_tuning_values">
+        <item>E</item>
+        <item>DROP_D</item>
+        <item>OPEN_D</item>
+        <item>OPEN_G</item>
+    </string-array>
+
+
+    <string-array name="prefs_tuning_shift_entries">
+        <item>Down 4 half steps</item>
+        <item>Down 3 half steps</item>
+        <item>Down 2 half steps</item>
+        <item>Down 1 half steps</item>
+        <item>Up 1 half steps</item>
+        <item>Up 2 half steps</item>
+        <item>Up 3 half steps</item>
+        <item>Up 4 half steps</item>
+    </string-array>
+
+    <string-array name="prefs_tuning_shift_values">
+        <item>-4</item>
+        <item>-3</item>
+        <item>-2</item>
+        <item>-1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+
+
+    <string-array name="prefs_rate_entries">
+        <item>44,100 Hz</item>
+        <item>22,050 Hz</item>
+        <item>11,025 Hz</item>
+        <item> 8,000 Hz</item>
+    </string-array>
+
+    <string-array name="prefs_rate_values">
+        <item>44100</item>
+        <item>22050</item>
+        <item>11025</item>
+        <item>8000</item>
+    </string-array>
+
+
+    <string-array name="prefs_size_entries">
+        <item> 4,096</item>
+        <item> 8,192</item>
+        <item>16,384</item>
+        <item>32,768</item>
+    </string-array>
+
+    <string-array name="prefs_size_values">
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+</resources>

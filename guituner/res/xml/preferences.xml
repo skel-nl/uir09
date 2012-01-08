@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/prefs_cat_tuning_title">
+
+        <ListPreference android:key="tuning"
+                        android:title="@string/prefs_tuning_title"
+                        android:entries="@array/prefs_tuning_entries"
+                        android:entryValues="@array/prefs_tuning_values"
+                        android:dialogTitle="@string/prefs_tuning_title"
+                        android:defaultValue="E"/>
+
+        <CheckBoxPreference android:key="tuning_shift_checkbox"
+                            android:title="@string/prefs_tuning_shift_checkbox_title"
+                            android:summary="@string/prefs_tuning_shift_checkbox_summary"
+                            android:defaultValue="false"/>
+
+        <ListPreference android:key="tuning_shift"
+                        android:dependency="tuning_shift_checkbox"
+                        android:title="@string/prefs_tuning_shift_title"
+                        android:entries="@array/prefs_tuning_shift_entries"
+                        android:entryValues="@array/prefs_tuning_shift_values"
+                        android:dialogTitle="@string/prefs_tuning_shift_title"
+                        android:defaultValue="-1"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/prefs_cat_advanced_title">
+
+        <ListPreference android:key="sample_rate"
+                        android:title="@string/prefs_rate_title"
+                        android:summary="@string/prefs_rate_summary"
+                        android:entries="@array/prefs_rate_entries"
+                        android:entryValues="@array/prefs_rate_values"
+                        android:dialogTitle="@string/prefs_rate_title"
+                        android:defaultValue="8000"/>
+
+        <ListPreference android:key="sample_log"
+                        android:title="@string/prefs_size_title"
+                        android:summary="@string/prefs_size_summary"
+                        android:entries="@array/prefs_size_entries"
+                        android:entryValues="@array/prefs_size_values"
+                        android:dialogTitle="@string/prefs_size_title"
+                        android:defaultValue="13"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="freq_units">Гц</string>
+
+
+    <string name="menu_prefs_title">Настройки</string>
+
+    <string name="prefs_cat_tuning_title">Строй</string>
+
+    <string name="prefs_tuning_title">Тип строя</string>
+
+    <string name="prefs_tuning_shift_checkbox_title">Сдвиг</string>
+    <string name="prefs_tuning_shift_checkbox_summary">Поднять или опустить строй</string>
+
+    <string name="prefs_tuning_shift_title">Интервал сдвига</string>
+
+
+    <string name="prefs_cat_advanced_title">Дополнительно</string>
+
+    <string name="prefs_rate_title">Частота дискретизации</string>
+    <string name="prefs_rate_summary">Выбор частоты дискретизации (и, следовательно диапазона частот)</string>
+
+    <string name="prefs_size_title">Размер буффера</string>
+    <string name="prefs_size_summary">Выбор размера буффера (чем больше, тем медленнее, но точнее)</string>
+</resources>

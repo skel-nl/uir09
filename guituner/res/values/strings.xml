@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">GuiTuner</string>
+
+    <string name="flat_text">♭</string>
+    <string name="sharp_text">♯</string>
+
+    <string name="note_up_text">+</string>
+    <string name="note_down_text">-</string>
+
+    <string name="freq_units">Hz</string>
+
+
+    <string name="menu_prefs_title">Settings</string>
+
+    <string name="prefs_cat_tuning_title">Tuning Settings</string>
+
+    <string name="prefs_tuning_title">Tuning type</string>
+
+    <string name="prefs_tuning_shift_checkbox_title">Transpose</string>
+    <string name="prefs_tuning_shift_checkbox_summary">Transpose selected tuning</string>
+
+    <string name="prefs_tuning_shift_title">Transposing interval</string>
+
+
+    <string name="prefs_cat_advanced_title">Advanced Settings</string>
+
+    <string name="prefs_rate_title">Sample rate</string>
+    <string name="prefs_rate_summary">Set the sample rate (and hence frequency range)</string>
+
+    <string name="prefs_size_title">Sample size</string>
+    <string name="prefs_size_summary">Set the sample size (larger is slower but finer)</string>
+</resources>

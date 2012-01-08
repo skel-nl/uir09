@@ -1,0 +1,34 @@
+<resources>
+    <string-array name="prefs_tuning_entries">
+        <item>Стандартный строй (E)</item>
+        <item>Dropped-строй (Drop D)</item>
+        <item>Открытый строй (Open D)</item>
+        <item>Открытый строй (Open G)</item>
+    </string-array>
+
+    <string-array name="prefs_tuning_shift_entries">
+        <item>Ниже на 4 полутона</item>
+        <item>Ниже на 3 полутона</item>
+        <item>Ниже на 2 полутона</item>
+        <item>Ниже на 1 полутон</item>
+        <item>Выше на 1 полутон</item>
+        <item>Выше на 2 полутона</item>
+        <item>Выше на 3 полутона</item>
+        <item>Выше на 4 полутона</item>
+    </string-array>
+
+
+    <string-array name="prefs_rate_entries">
+        <item>44 100 Гц</item>
+        <item>22 050 Гц</item>
+        <item>11 025 Гц</item>
+        <item> 8 000 Гц</item>
+    </string-array>
+
+    <string-array name="prefs_size_entries">
+        <item> 4 096</item>
+        <item> 8 192</item>
+        <item>16 384</item>
+        <item>32 768</item>
+    </string-array>
+</resources>

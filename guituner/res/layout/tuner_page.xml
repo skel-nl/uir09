@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:layout_gravity="center"
+             android:layout_marginTop="25dip"
+             android:layout_marginBottom="20dip"
+             android:layout_marginLeft="15dip"
+             android:layout_marginRight="15dip"
+             android:stretchColumns="*">
+
+    <TableRow>
+        <LinearLayout android:layout_column="2"
+                      android:layout_span="5"
+                      android:background="@color/note_color">
+            <Button android:id="@+id/note_up_id"
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:typeface="monospace"
+                    android:textSize="24sp"
+                    android:text="@string/note_up_text"/>
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow>
+        <TextView android:id="@+id/flat_id"
+                  android:layout_span="2"
+                  android:gravity="center"
+                  android:typeface="monospace"
+                  android:textSize="50sp"
+                  android:text="@string/flat_text"/>
+
+        <TextView android:id="@+id/note_id"
+                  android:background="@color/note_color"
+                  android:layout_span="5"
+                  android:gravity="center"
+                  android:typeface="monospace"
+                  android:textSize="50sp"
+                  android:text="E4"/>
+
+        <TextView android:id="@+id/sharp_id"
+                  android:layout_span="2"
+                  android:gravity="center"
+                  android:typeface="monospace"
+                  android:textSize="50sp"
+                  android:text="@string/sharp_text"/>
+    </TableRow>
+
+    <TableRow>
+        <LinearLayout android:layout_column="2"
+                      android:layout_span="5"
+                      android:background="@color/note_color">
+            <Button android:id="@+id/note_down_id"
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:typeface="monospace"
+                    android:textSize="24sp"
+                    android:text="@string/note_down_text"/>
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow android:layout_weight="1"
+              android:gravity="bottom">
+
+        <TextView android:id="@+id/cur_freq_id"
+                  android:layout_span="9"
+                  android:gravity="center"
+                  android:typeface="monospace"
+                  android:textSize="40sp"
+                  android:text="329.63"/>
+    </TableRow>
+
+    <TableRow android:layout_weight="1"
+              android:gravity="top">
+
+        <TextView android:layout_span="9"
+                  android:gravity="center"
+                  android:typeface="monospace"
+                  android:textSize="40sp"
+                  android:text="@string/freq_units"/>
+    </TableRow>
+
+    <TableRow>
+        <Button android:id="@+id/string_1"
+                android:layout_span="3"
+                android:typeface="monospace"
+                android:textSize="32sp"
+                android:text="E4"/>
+
+        <Button android:id="@+id/string_2"
+                android:layout_span="3"
+                android:typeface="monospace"
+                android:textSize="32sp"
+                android:text="B3"/>
+
+        <Button android:id="@+id/string_3"
+                android:layout_span="3"
+                android:typeface="monospace"
+                android:textSize="32sp"
+                android:text="G3"/>
+    </TableRow>
+
+    <TableRow>
+        <Button android:id="@+id/string_4"
+                android:layout_span="3"
+                android:typeface="monospace"
+                android:textSize="32sp"
+                android:text="D3"/>
+
+        <Button android:id="@+id/string_5"
+                android:layout_span="3"
+                android:typeface="monospace"
+                android:textSize="32sp"
+                android:text="A2"/>
+
+        <Button android:id="@+id/string_6"
+                android:layout_span="3"
+                android:typeface="monospace"
+                android:textSize="32sp"
+                android:text="E2"/>
+    </TableRow>
+
+</TableLayout>
