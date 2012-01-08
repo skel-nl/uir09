@@ -225,10 +225,10 @@ public class Tuner extends Activity {
             double frequency = spectrumAnalyzer.getFrequency(buffer);
             logger.d("Frequency: " + frequency);
 
+            clearColors();
             if (frequency > 0) {
                 updateFrequency(frequency);
 
-                clearColors();
                 if (note.frequencyIsEqual(frequency, spectrumAnalyzer.getStep() / 2)) {
                     updateColor(curNoteTextView);
                 } else if (note.getFrequency() > frequency) {
