@@ -21,10 +21,4 @@ public final class Validate {
             throw new IllegalArgumentException("The validated object is null");
         }
     }
-
-    public static void isNull(Object object) {
-        if (object != null) {
-            throw new IllegalArgumentException("The validated object is not null");
-        }
-    }
 }
