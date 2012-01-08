@@ -7,6 +7,8 @@ import skel.misc.util.Validate;
  */
 public class SpectrumAnalyzer {
 
+    private static final double THRESHOLD = 0.03;
+
     private final Fft fft;
     private final double step;
     private final double minFrequency;
@@ -42,11 +44,25 @@ public class SpectrumAnalyzer {
 
         fft.doFFT(xr, xi, false);
 
+        
+        double[] amplitudes = new double[n];
+        double maxAmplitude = 0.0;
+        
+        for (int i = 0; i < n; i++) {
+            double curAmplitude = Math.hypot(xr[i], xi[i]);
+            amplitudes[i] = curAmplitude;
+
+            if (curAmplitude > maxAmplitude) {
+                maxAmplitude = curAmplitude;
+            }
+        }
+
+
         double frequency = -1.0;
-        double amplitude = -1.0;
+        double amplitude = 1 - THRESHOLD;
 
         for (int i = (int) (minFrequency / step); i < (int) (maxFrequency / step); i++) {
-            double curAmplitude = Math.hypot(xr[i], xi[i]);
+            double curAmplitude = amplitudes[i] / maxAmplitude;
 
             if (curAmplitude > amplitude) {
                 amplitude = curAmplitude;
