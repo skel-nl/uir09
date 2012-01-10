@@ -13,4 +13,5 @@
         </activity>
         <activity android:name="skel.guituner.Prefs"/>
     </application>
+
 </manifest>
