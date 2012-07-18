@@ -22,7 +22,7 @@ public class SpectrumAnalyzerTest {
         }
 
         SpectrumAnalyzer spectrumAnalyzer =
-                new SpectrumAnalyzer(sampleRate, sampleLog, 0.0, sampleRate / 2.0);
+                new SpectrumAnalyzer(sampleRate, sampleLog);
 
         double practFreq = spectrumAnalyzer.getFrequency(sample);
         Assert.assertTrue(Math.abs(theorFreq - practFreq) < spectrumAnalyzer.getStep() / 2.0);

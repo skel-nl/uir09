@@ -7,6 +7,7 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
 import skel.misc.note.Tuning;
+import skel.misc.note.TuningUtils;
 
 public class Prefs extends PreferenceActivity {
 
@@ -26,6 +27,7 @@ public class Prefs extends PreferenceActivity {
     private static final String OPT_SAMPLE_LOG_DEF = "13";
 
 
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
@@ -34,7 +36,7 @@ public class Prefs extends PreferenceActivity {
     public static Tuning getTuning(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-        Tuning tuning = Tuning.tuning(prefs.getString(OPT_TUNING, OPT_TUNING_DEF));
+        Tuning tuning = TuningUtils.getTuning(prefs.getString(OPT_TUNING, OPT_TUNING_DEF));
 
         boolean shiftingNeeded = prefs.getBoolean(OPT_TUNING_SHIFT_CHECKBOX,
                 OPT_TUNING_SHIFT_CHECKBOX_DEF);

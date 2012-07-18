@@ -11,6 +11,10 @@ public class SpectrumAnalyzer {
     private final double step;
     private final int minIndex;
     private final int maxIndex;
+    
+    public SpectrumAnalyzer(int sampleRate, int sampleLog) {
+        this(sampleRate, sampleLog, 0.0, sampleRate / 2.0);
+    }
 
     public SpectrumAnalyzer(int sampleRate, int sampleLog, double minFrequency,
             double maxFrequency)
